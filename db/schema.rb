@@ -10,9 +10,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_01_15_151934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "department"
+    t.string "org_number"
+    t.string "personal_number"
+    t.string "address"
+    t.integer "postal_number"
+    t.string "city"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.date "implementation_date"
+    t.integer "customer_id"
+    t.string "reference"
+    t.integer "issuer_id"
+    t.boolean "billed"
+    t.integer "work_order"
+    t.integer "project"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "issuers", force: :cascade do |t|
+    t.string "name"
+    t.string "business_area"
+    t.string "unit"
+    t.string "phone_number"
+    t.string "email"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "price_partials", force: :cascade do |t|
+    t.string "name"
+    t.boolean "adjustable"
+    t.text "standard_text"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.integer "price_partial_id"
+    t.date "from_date"
+    t.date "to_date"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "business_area"
+    t.string "name"
+    t.string "invoice_type"
+    t.string "account"
+    t.boolean "vat"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
