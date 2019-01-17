@@ -8,5 +8,6 @@ i = 0
                   reference: Faker::Name.name, 
                   billed: rand(0..1) == 0, 
                   work_order: Faker::Invoice.reference,
-                  project: Faker::Number.number(10) )
+                  project: Faker::Number.number(10),
+                  product_id: rand(1..2) )
 end
