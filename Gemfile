@@ -8,6 +8,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rack-cors', require: 'rack/cors'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails'

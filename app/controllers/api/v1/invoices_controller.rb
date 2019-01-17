@@ -1,6 +1,6 @@
 class Api::V1::InvoicesController < ApplicationController
   def index
-    @invoices = Card.all
+    @invoices = Invoice.all
     render json: {invoices: @invoices}
   end
 
@@ -12,6 +12,11 @@ class Api::V1::InvoicesController < ApplicationController
     else
       render json: { error: @invoice.errors.full_messages }
     end
+  end
+
+  def show
+    @invoice = Invoice.find(params[:id])
+    render json: {invoice: @invoice}
   end
 
   def update
@@ -27,10 +32,9 @@ class Api::V1::InvoicesController < ApplicationController
 
     @invoice = Invoice.find(params[:id])
     if @invoice.destroy
-
-      render json: {invoice: "invoice was successfully destroyed and removed from content packages they were included in"}
+      render json: {invoice: "Invoice was successfully destroyed"}
     else
-      render json: {error: "Could not destroy invoice"}
+      render json: {error: @invoice.errors.full_messages}
     end
   end
 
