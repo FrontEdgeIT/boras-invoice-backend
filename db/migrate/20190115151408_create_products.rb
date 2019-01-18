@@ -7,7 +7,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :account
       t.boolean :vat
       t.boolean :active
-
       t.timestamps
     end
   end

@@ -5,7 +5,6 @@ class CreatePricePartials < ActiveRecord::Migration[5.2]
       t.boolean :adjustable
       t.text :standard_text
       t.boolean :active
-
       t.timestamps
     end
   end

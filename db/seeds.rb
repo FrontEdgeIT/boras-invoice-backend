@@ -25,6 +25,14 @@ i = 0
                   postal_number: Faker::Address.zip,
                   city: "#{Faker::Address.city_prefix} #{Faker::Address.city_suffix.capitalize}",
                   active: rand(0..1) == 0)
+
+  Product.create( name: Faker::Commerce.product_name,
+                  business_area: Faker::Company.industry,
+                  invoice_type: "Engångsavgift",
+                  account: Faker::Business.credit_card_number,
+                  vat: (0..1) == 0,
+                  active: (0..1) == 0    
+    )
 end
 
 
