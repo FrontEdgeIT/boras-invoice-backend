@@ -33,6 +33,21 @@ i = 0
                   vat: (0..1) == 0,
                   active: (0..1) == 0    
     )
+  
+  unitArray = ["st", "timme"]
+  PricePartial.create(name: Faker::Job.field,
+                      adjustable: rand(0..1) == 0,
+                      standard_text: Faker::Lorem.sentence,
+                      active: rand(0..1) == 0,
+                      price: Faker::Number.number(5),
+                      unit: unitArray[rand(0..1)] )
+
+  InvoiceItem.create( invoice_id: rand(1..10),
+                      price_partial_id: rand(1..10),
+                      amount: rand(1..5),
+                      total_price: Faker::Number.number(6),
+                      item_text: Faker::Lorem.sentence)
+
 end
 
 
