@@ -45,6 +45,7 @@ class Api::V1::PricePartialsController < ApplicationController
                   :adjustable, 
                   :standard_text,
                   :active,
-                  :price)
+                  :price,
+                  :unit)
   end
 end
