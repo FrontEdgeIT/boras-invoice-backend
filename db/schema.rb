@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_17_142655) do
+ActiveRecord::Schema.define(version: 2019_01_19_121215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,15 +57,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_142655) do
     t.boolean "adjustable"
     t.text "standard_text"
     t.boolean "active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "prices", force: :cascade do |t|
-    t.integer "price_partial_id"
-    t.date "from_date"
-    t.date "to_date"
-    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
