@@ -30,8 +30,8 @@ i = 0
                   business_area: Faker::Company.industry,
                   invoice_type: "Engångsavgift",
                   account: Faker::Business.credit_card_number,
-                  vat: (0..1) == 0,
-                  active: (0..1) == 0    
+                  vat: rand(0..1) == 0,
+                  active: rand(0..1) == 0    
     )
   
   unitArray = ["st", "timme"]
