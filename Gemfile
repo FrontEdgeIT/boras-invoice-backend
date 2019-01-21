@@ -9,6 +9,10 @@ gem 'puma', '~> 3.11'
 gem 'rack-cors', require: 'rack/cors'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
+gem 'rack-cors', require: 'rack/cors'
+gem 'devise_token_auth'
+gem 'jbuilder'
+
 
 group :development, :test do
   gem 'rspec-rails'
