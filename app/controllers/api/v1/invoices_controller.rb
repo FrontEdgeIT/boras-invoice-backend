@@ -47,6 +47,7 @@ class Api::V1::InvoicesController < ApplicationController
                   :issuer_id,
                   :billed,
                   :work_order,
-                  :project)
+                  :project,
+                  :product_id)
   end
 end
