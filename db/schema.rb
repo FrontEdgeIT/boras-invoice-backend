@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_01_19_152215) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "department"
@@ -105,7 +102,7 @@ ActiveRecord::Schema.define(version: 2019_01_19_152215) do
     t.string "nickname"
     t.string "image"
     t.string "email"
-    t.json "tokens"
+    t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
