@@ -7,7 +7,7 @@ class Api::V1::PricePartialsController < ApplicationController
   def create
     @price_partial = PricePartial.new(price_partial_params)
     
-    if @price_partial.save      
+    if @price_partial.save
       render json: { price_partial: @price_partial }
     else
       render json: { error: @price_partial.errors.full_messages }

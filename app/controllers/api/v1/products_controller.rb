@@ -5,9 +5,9 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    
-    if @product.save      
+    @product = Product.new(product_params)    
+    if @product.save
+      params[:price_partials].each {|p| ProductPrice.create(product_id: @product.id, price_id: p)}     
       render json: { product: @product }
     else
       render json: { error: @product.errors.full_messages }
@@ -39,12 +39,6 @@ class Api::V1::ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(
-    :name, 
-    :business_area, 
-    :invoice_type,
-    :account,
-    :vat,
-    :active)
+    params.require(:product).permit!
   end
 end
