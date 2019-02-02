@@ -32,6 +32,7 @@ class Api::V1::PricePartialsController < ApplicationController
 
     @price_partial = PricePartial.find(params[:id])
     if @price_partial.destroy
+      ProductPrice.where(price_id: @price_partial.id).destroy_all
       render json: {price_partial: "Price_partial was successfully destroyed"}
     else
       render json: {error: @price_partial.errors.full_messages}
