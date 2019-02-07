@@ -3,21 +3,15 @@ default: &default
   adapter: sqlserver
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: BORNET\robbor
-  password: Elnat2018xgre!
-  host: SQL1.bornet.se
-
+  username: XPS15\robin
+  password: Aboochi123#
+  host: localhost
 
 development:
   <<: *default
-  database: Invoice_manager
-
-test:
-  <<: *default
-  database: invoice-management-backend_test
-
+  database: BorasTestDB
 
 production:
   <<: *default
-  database: Invoice_manager
+  database: BorasTestDB
  
