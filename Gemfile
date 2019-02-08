@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.3.3'
 
 gem 'rails', '~> 5.2.1'
 gem 'tiny_tds'
@@ -12,6 +12,7 @@ gem 'faker'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
 gem 'jbuilder'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 
 group :development, :test do

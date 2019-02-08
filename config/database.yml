@@ -3,8 +3,8 @@ default: &default
   adapter: sqlserver
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: sa
-  password: <%= Rails.application.credentials.mssql[:password] %>
+  username: XPS15\robin
+  password: Aboochi123#
   host: localhost
 
 development:
