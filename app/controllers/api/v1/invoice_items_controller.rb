@@ -45,7 +45,10 @@ class Api::V1::InvoiceItemsController < ApplicationController
                   :price_partial_id, 
                   :amount,
                   :total_price,
-                  :item_text
+                  :item_text,
+                  :unit,
+                  :unit_price,
+                  :vat
                   )
   end
 end
