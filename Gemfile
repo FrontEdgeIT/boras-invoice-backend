@@ -14,7 +14,6 @@ gem 'devise_token_auth'
 gem 'jbuilder'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
