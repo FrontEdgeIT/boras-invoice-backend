@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-With the default gem-setup Microsoft SQL Server 2017 needs to be installed on your system.
+- With the default gem-setup Microsoft SQL Server 2017 needs to be installed on your system.
+- Ruby 2.3.3
 
 ## Installation
 
